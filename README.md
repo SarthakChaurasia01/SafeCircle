@@ -1,50 +1,65 @@
-# Welcome to your Expo app 👋
+# 🛡️ SafeCircle
+**A Community-Based Emergency Response & AI Guidance Platform**
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+SafeCircle bridges the critical gap between victims and nearby volunteers during emergencies. Built for the **Build with AI / Hack2Skill Solution Challenge**, this platform leverages real-time cloud data and advanced AI to ensure no call for help goes unanswered.
 
-## Get started
+---
 
-1. Install dependencies
+## ✨ Key Features
+* **🚨 1-Tap SOS Proximity Alerts:** Instantly extracts precise GPS coordinates and alerts nearby registered volunteers.
+* **🗺️ Smart Safe Routing:** Visualizes the fastest, safest paths for volunteers to reach the victim using real-time geolocation.
+* **🧠 Universal Safety Assistant:** Powered by Google Gemini 2.5 Flash, providing instant, formatted natural language triage and survival guidance during high-stress situations.
+* **⚡ Zero-Latency Dispatch:** Uses NoSQL document syncing to update the community dashboard in real-time.
 
+---
+
+## 🛠️ Tech Stack & Architecture
+* **Frontend:** React Native (TypeScript), Expo 
+* **Backend:** Google Firebase (Firestore for NoSQL state management, FCM for push notifications)
+* **AI Engine:** Google Gemini 2.5 Flash API (Real-time Natural Language Processing)
+* **Hardware Integration:** Expo Location APIs, Expo Camera APIs
+
+---
+
+## 🚀 How to Run the App Locally (For Judges & Evaluators)
+
+Due to our heavy integration of native hardware APIs (Geolocation Maps, Accelerometer, and Camera), the absolute best way to test the full, flawless functionality of SafeCircle is via the **Expo Go** mobile client. 
+
+Please follow these precise steps to run the working prototype on your physical mobile device:
+
+### Step 1: Prepare Your Mobile Device
+1. **Download the App:** Download the **"Expo Go"** app on your physical mobile phone from the [Apple App Store](https://apps.apple.com/us/app/expo-go/id982107779) or [Google Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent).
+2. **Create an Account:** Open the Expo Go app on your phone and quickly create a free account (or log in if you already have one).
+
+### Step 2: Prepare Your Local Environment
+1. Ensure you have [Node.js](https://nodejs.org/) installed on your computer.
+2. Clone this repository to your local machine:
    ```bash
-   npm install
-   ```
+   git clone [https://github.com/SarthakChaurasia01/SafeCircle.git](https://github.com/SarthakChaurasia01/SafeCircle.git)
+   cd SafeCircle
+Install the project dependencies:
 
-2. Start the app
+Bash
+npm install
+Step 3: Launch the Application
+Start the Expo development server by forcing the Expo Go configuration. Run this exact command in your terminal:
 
-   ```bash
-   npx expo start
-   ```
+Bash
+npm start --go
+A large QR Code will generate in your terminal (and a browser window may open displaying the same QR code).
 
-In the output, you'll find options to open the app in a
+Scan the QR Code:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+On iOS: Open your iPhone's default Camera app and point it at the QR code. Tap the "Open in Expo Go" notification that appears at the top of your screen.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+On Android: Open the Expo Go app, tap "Scan QR Code" on the home screen, and point it at your computer screen.
 
-## Get a fresh project
+The app will bundle the JavaScript code and launch SafeCircle directly on your phone!
 
-When you're ready, run:
+⚠️ Important Note Regarding the Standalone APK (MVP)
+If you are testing the direct .apk installation file provided in our submission:
+Due to strict native Android Maps API constraints in the standalone build, the visual map rendering has been temporarily bypassed in the APK to prevent startup crashes (as it requires a production Google Cloud API billing key).
 
-```bash
-npm run reset-project
-```
+However, full geolocation, SOS proximity routing, and Gemini AI integrations are completely functional in the development environment. To see the map working perfectly, please run the app via the Expo Go instructions above or review our 3-Minute Demo Video!
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Developed by Sarthak for the Hack2Skill Solution Challenge.
